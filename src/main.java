@@ -35,7 +35,7 @@ public class main {
     }
 
     public static void main(String[] args) {
-        Date now = new Date();
+        Date now = new Date(); // tested at 22:19
         Calendar calendar = Calendar.getInstance();
 
         calendar.set(Calendar.HOUR_OF_DAY, 20);
