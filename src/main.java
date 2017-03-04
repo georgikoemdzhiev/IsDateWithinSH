@@ -31,30 +31,30 @@ public class main {
         } catch (java.text.ParseException e) {
             return false;
         }
+
     }
 
     public static void main(String[] args) {
-        Calendar calendar = Calendar.getInstance(Locale.UK);
-        calendar.add(Calendar.DAY_OF_WEEK, -1);
+        Date now = new Date();
+        Calendar calendar = Calendar.getInstance();
+
         calendar.set(Calendar.HOUR_OF_DAY, 20);
         calendar.set(Calendar.MINUTE, 0);
 
-        Date StartSH = calendar.getTime();
-        calendar.add(Calendar.DAY_OF_WEEK, 2);
-        calendar.set(Calendar.HOUR_OF_DAY, 12);
-        calendar.set(Calendar.HOUR_OF_DAY, 0);
-        Date StopSH = calendar.getTime();
+        Date startSleepingHours = calendar.getTime();
 
-        Calendar cal = Calendar.getInstance(Locale.UK);
-        cal.set(Calendar.HOUR_OF_DAY, 5);
-        cal.set(Calendar.MINUTE, 29);
+        calendar.set(Calendar.HOUR_OF_DAY, 8);
+        calendar.set(Calendar.MINUTE, 0);
 
-        Date now = cal.getTime();
 
-        if (isWithingSH(StartSH, now, StopSH)) {
-            System.out.println("SLEEPING HOURS");
+        Date stopSleepingHours = calendar.getTime();
+
+
+        if (isWithingSH(startSleepingHours, now, stopSleepingHours)) {
+            System.out.println("SLEEPING HOURS now:" + now.toString() + " startSH:" + startSleepingHours + " stopSH:" + stopSleepingHours.toString());
+
         } else {
-            System.out.println("NOT SLEEPING HOURS");
+            System.out.println("NOT SLEEPING HOURS now:" + now.toString() + " startSH:" + startSleepingHours + " stopSH:" + stopSleepingHours.toString());
         }
 
 
